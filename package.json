@@ -1,0 +1,13 @@
+{
+    "name": "express-jenkins-demo",
+    "version": "1.0.0",
+    "description": "Simple Express.js app for Jenkins deployment",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "test": "echo \"No tests configured\" && exit 0"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    }
+}

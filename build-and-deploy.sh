@@ -2,7 +2,7 @@
 # Save this as build-and-deploy.sh in your repository
 
 # Variables
-DOCKER_IMAGE_NAME="your-dockerhub-username/webapp"
+DOCKER_IMAGE_NAME="franklynux/e-commerce-web:${BUILD_NUMBER}"
 DOCKER_IMAGE_TAG="latest"
 APP_PORT="8080"
 CONTAINER_NAME="web-application"
@@ -20,7 +20,7 @@ docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} .
 docker tag ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} ${DOCKER_IMAGE_NAME}:${BUILD_NUMBER}
 
 # Login to Docker Hub (credentials will be injected by Jenkins)
-echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+echo $DOCKER_CREDENTIALS_PSW | docker login -u $DOCKER_CREDENTIALS_USR --password-stdin
 
 # Push to Docker Hub
 docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}
