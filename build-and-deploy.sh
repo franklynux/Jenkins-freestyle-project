@@ -3,7 +3,7 @@
 # Variables - Fixed the tag format
 DOCKER_IMAGE_NAME="franklynux/express-app"
 DOCKER_IMAGE_TAG="v1.0"
-APP_PORT="8080"
+APP_PORT="9000"
 CONTAINER_NAME="express-application"
 
 # Install dependencies and run tests
@@ -14,7 +14,7 @@ npm test
 docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} .
 
 # Login to Docker Hub
-echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+echo $DOCKER_CREDENTIALS_PSW | docker login -u $DOCKER_CREDENTIALS_PSW --password-stdin
 
 # Push to Docker Hub
 docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}
