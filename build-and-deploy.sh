@@ -3,7 +3,7 @@
 # Variables - Fixed the tag format
 DOCKER_IMAGE_NAME="franklynux/express-app"
 DOCKER_IMAGE_TAG="v1.0"
-APP_PORT="9000"
+APP_PORT="3000"
 CONTAINER_NAME="express-application"
 
 # Install dependencies and run tests
