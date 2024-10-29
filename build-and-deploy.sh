@@ -14,7 +14,7 @@ npm test
 docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} .
 
 # Login to Docker Hub
-echo $DOCKER_CREDENTIALS_PSW | docker login -u $DOCKER_CREDENTIALS_PSW --password-stdin
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 # Push to Docker Hub
 docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}
