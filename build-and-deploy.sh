@@ -1,30 +1,23 @@
 #!/bin/bash
-# Save this as build-and-deploy.sh in your repository
 
-# Variables
-DOCKER_IMAGE_NAME="franklynux/e-commerce-web:${BUILD_NUMBER}"
-DOCKER_IMAGE_TAG="latest"
+# Variables - Fixed the tag format
+DOCKER_IMAGE_NAME="franklynux/express-app"
+DOCKER_IMAGE_TAG="v1.0"
 APP_PORT="8080"
-CONTAINER_NAME="web-application"
+CONTAINER_NAME="express-application"
 
-# Build Application (Uncomment/modify based on your application type)
-# For Node.js:
+# Install dependencies and run tests
 npm install
-npm run build
+npm test
 
-# For Java:
-# mvn clean package
-
-# Build Docker Image
+# Build Docker Image (fixed tag format)
 docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} .
-docker tag ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} ${DOCKER_IMAGE_NAME}:${BUILD_NUMBER}
 
-# Login to Docker Hub (credentials will be injected by Jenkins)
-echo $DOCKER_CREDENTIALS_PSW | docker login -u $DOCKER_CREDENTIALS_USR --password-stdin
+# Login to Docker Hub
+echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
 
 # Push to Docker Hub
 docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}
-docker push ${DOCKER_IMAGE_NAME}:${BUILD_NUMBER}
 
 # Stop and remove existing container
 if docker ps -a | grep -q ${CONTAINER_NAME}; then
@@ -41,3 +34,5 @@ docker run -d \
 # Cleanup
 docker logout
 docker system prune -f
+
+echo "Application deployed! Access it at http://localhost:${APP_PORT}"
