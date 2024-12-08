@@ -3,7 +3,7 @@
 # Variables - Fixed the tag format
 DOCKER_IMAGE_NAME="franklynux/nodejs-app"
 DOCKER_IMAGE_TAG="v1.0"
-APP_PORT="9000"
+APP_PORT="3000"
 CONTAINER_NAME="tech-consulting-app"
 
 # Install dependencies and run tests
