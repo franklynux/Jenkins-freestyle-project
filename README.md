@@ -2,9 +2,13 @@
 
 A Node.js web application for a technology consulting company that showcases services and provides contact functionality. The application is containerized using Docker and includes automated build and deployment scripts.
 
-## Table of Contents
+## Related Projects
+This project is part of a larger practice portfolio. You can also check out our e-commerce platform project at:
+- [E-commerce Platform Practice](https://github.com/franklynux/ecommerce-platform-practice)
 
+## Table of Contents
 - [Tech Consulting Application](#tech-consulting-application)
+  - [Related Projects](#related-projects)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Prerequisites](#prerequisites)
@@ -25,9 +29,9 @@ A Node.js web application for a technology consulting company that showcases ser
   - [Environment Variables](#environment-variables)
   - [Contributing](#contributing)
   - [License](#license)
+  - [Author](#author)
 
 ## Features
-
 - Service catalog display
 - Contact form functionality
 - Responsive web interface
@@ -36,7 +40,6 @@ A Node.js web application for a technology consulting company that showcases ser
 - Error handling
 
 ## Prerequisites
-
 - Node.js (v18 or higher)
 - npm (Node Package Manager)
 - Docker
@@ -44,9 +47,9 @@ A Node.js web application for a technology consulting company that showcases ser
 
 ## Installation
 
-1. Clone the repository:
+1. Clone this repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/franklynux/Jenkins-freestyle-project.git
 cd Jenkins-freestyle-project
 ```
 
@@ -59,7 +62,6 @@ npm install
 ## Running the Application
 
 ### Local Development
-
 ```bash
 npm start
 ```
@@ -69,7 +71,6 @@ The application will be available at `http://localhost:3000`
 [Place screenshot of running application here]
 
 ## Testing
-
 Run the test suite:
 ```bash
 npm test
@@ -81,7 +82,6 @@ npm test
 ## Docker Deployment
 
 ### Building and Deploying
-
 The application includes an automated build and deployment script:
 
 ```bash
@@ -99,7 +99,6 @@ This script will:
 [Place screenshot of successful deployment here]
 
 ### Manual Docker Commands
-
 Build the image:
 ```bash
 docker build -t franklynux/nodejs-app:v1.0 .
@@ -111,7 +110,6 @@ docker run -d -p 9000:9000 --name tech-consulting-app franklynux/nodejs-app:v1.0
 ```
 
 ## Project Structure
-
 ```
 Jenkins-freestyle-project/
 ├── tech-consulting-app/
@@ -128,7 +126,6 @@ Jenkins-freestyle-project/
 ## API Endpoints
 
 ### Home Page
-
 - **URL:** `/`
 - **Method:** `GET`
 - **Description:** Landing page with navigation links
@@ -137,7 +134,6 @@ Jenkins-freestyle-project/
 [Place screenshot of home page here]
 
 ### Services
-
 - **URL:** `/services`
 - **Method:** `GET`
 - **Description:** Displays available consulting services
@@ -146,7 +142,6 @@ Jenkins-freestyle-project/
 [Place screenshot of services page here]
 
 ### Contact Form
-
 - **URL:** `/contact`
 - **Method:** `GET`
 - **Description:** Contact form for inquiries
@@ -155,7 +150,6 @@ Jenkins-freestyle-project/
 [Place screenshot of contact form here]
 
 ### Submit Contact
-
 - **URL:** `/submit-contact`
 - **Method:** `POST`
 - **Description:** Handles contact form submissions
@@ -165,7 +159,6 @@ Jenkins-freestyle-project/
   - `message`: String (required)
 
 ## Error Handling
-
 The application includes built-in error handling for:
 - 404 Not Found errors
 - 500 Server errors
@@ -175,13 +168,11 @@ The application includes built-in error handling for:
 [Place screenshot of error page here]
 
 ## Environment Variables
-
 - `PORT`: Application port (default: 3000)
 - `DOCKER_USERNAME`: Docker Hub username (for deployment)
 - `DOCKER_PASSWORD`: Docker Hub password (for deployment)
 
 ## Contributing
-
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
@@ -189,5 +180,7 @@ The application includes built-in error handling for:
 5. Open a Pull Request
 
 ## License
-
 This project is licensed under the ISC License - see the package.json file for details.
+
+## Author
+[franklynux](https://github.com/franklynux)
