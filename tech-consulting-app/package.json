@@ -4,8 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node app.js",
-    "build": "vite"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
