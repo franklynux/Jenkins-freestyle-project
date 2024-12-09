@@ -7,7 +7,6 @@ APP_PORT="3000"
 CONTAINER_NAME="tech-consulting-app"
 
 # Install dependencies and run tests
-cd tech-consulting-app
 npm install
 npm test
 
